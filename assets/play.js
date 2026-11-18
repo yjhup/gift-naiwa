@@ -5,6 +5,8 @@
   if (!video) return;
 
   var unlocked = false;
+  // 揭晓瞬间别用大音量吓到人，后续用户可自行调大。
+  var START_VOLUME = 0.3;
 
   function showHint(text) {
     if (hintText && text) hintText.textContent = text;
@@ -19,7 +21,7 @@
     if (unlocked) return;
     unlocked = true;
     video.muted = false;
-    video.volume = 1;
+    video.volume = START_VOLUME;
     var result = video.play();
     if (result && typeof result.then === 'function') {
       result.then(hideHint).catch(function () {
@@ -41,6 +43,7 @@
   // 先尝试带声音自动播放，被浏览器策略拦截时退回静音自动播放。
   function autoplay() {
     video.muted = false;
+    video.volume = START_VOLUME;
     var result = video.play();
     if (result && typeof result.then === 'function') {
       result.then(function () {

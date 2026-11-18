@@ -67,7 +67,7 @@
       <p class="question">是否要收下？</p>
 
       <div class="actions">
-        <a class="btn btn-refuse" href="play.html">残忍拒绝</a>
+        <a class="btn btn-refuse" id="refuseBtn" href="play.html">残忍拒绝</a>
         <a class="btn btn-accept" href="play.html">收下</a>
       </div>
 
@@ -76,5 +76,33 @@
   </main>
 
   <script src="assets/snow.js" defer></script>
+  <script src="assets/refuse.js" defer></script>
+
+  <!-- 拒绝无效小剧场 -->
+  <div class="refuse-scene" id="refuseScene" aria-hidden="true">
+    <div class="refuse-backdrop"></div>
+    <div class="refuse-panel" role="dialog" aria-modal="true" aria-labelledby="refuseTitle">
+      <div class="refuse-icon" aria-hidden="true">🎁</div>
+      <p class="refuse-title" id="refuseTitle">拒绝？不存在的</p>
+      <p class="refuse-line" id="refuseLine"></p>
+      <div class="refuse-actions">
+        <button class="refuse-go" id="refuseGo" type="button" disabled>
+          认命吧，揭晓礼物 <span class="refuse-count" id="refuseCount">3</span>
+        </button>
+        <button class="refuse-skip" id="refuseSkip" type="button">让我直接看 →</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="icp-footer">
+    <div>
+      <a href="https://icp.gov.moe/?keyword=20266651" target="_blank">
+        <img class="icp-icon" src="https://icp.gov.moe/images/gov.svg" alt="" />
+        萌ICP备20266651号
+      </a>
+    </div>
+    <div class="icp-powered">Powered By <a href="https://yjhup.com" target="_blank">YJH</a></div>
+  </footer>
+
 </body>
 </html>
